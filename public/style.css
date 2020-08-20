@@ -1,8 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
+html,
 body {
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
@@ -17,20 +19,25 @@ body {
     opacity: 100%;
 }
 
-.strapline {
+.strapline,
+.counter-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20vh;
+    height: 15vh;
     border: #23967f 5px solid;
     border-radius: 30px;
-    margin: 2%;
-    padding: 2%;
+    margin: 1vh 1vh 0 1vh;
+    padding: 1vh;
 }
 
 .logo,
 .name {
-    height: 20vh;
+    height: 100%;
+}
+
+.logo {
+    width: 25vw;
 }
 
 .name {
@@ -38,6 +45,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20vh;
+    font-size: 15vw;
     text-align: center;
+    width: 70%;
+}
+
+.counter-container {
+    min-height: 75vh;
+}
+
+.row-number,
+.stitch-number {
+    border: #23967f 2px solid;
+    border-radius: 30px;
 }

@@ -1,6 +1,9 @@
 import React from "react";
 import Logo from "./logo";
 import Name from "./name";
+import Row from "./row";
+import Stitch from "./stitch";
+
 import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
@@ -11,6 +14,10 @@ export default function App() {
                     <div className="strapline">
                         <Logo />
                         <Name />
+                    </div>
+                    <div className="counter-container">
+                        <Row />
+                        <Stitch />
                     </div>
                 </div>
             </div>
