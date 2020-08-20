@@ -31,13 +31,14 @@ body {
     padding: 1vh;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .logo,
 .name {
     height: 100%;
-}
-
-.logo {
-    width: 25vw;
 }
 
 .name {
@@ -46,16 +47,74 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 15vw;
+    max-height: 150px;
     text-align: center;
     width: 70%;
 }
 
 .counter-container {
+    color: #086788;
     min-height: 75vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.row-number,
-.stitch-number {
+.title {
+    font-weight: bold;
+}
+
+.click-container {
+    background-color: #eaf9d9;
     border: #23967f 2px solid;
     border-radius: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 40%;
+    padding: 2%;
+    margin-top: 2%;
+    font-size: 5vw;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.counter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    text-align: center;
+}
+
+.number,
+button {
+    border: #23967f 2px solid;
+    border-radius: 30px;
+    padding: 1%;
+    text-align: center;
+    color: inherit;
+    background-color: white;
+}
+
+button {
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+}
+
+.stitch-minus,
+.number,
+.stitch-plus,
+.row-minus,
+.row-plus {
+    width: 30%;
 }

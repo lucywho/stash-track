@@ -5,13 +5,13 @@ import Number from "./number";
 
 export default function Stitch() {
     return (
-        <div className="stitch-container">
-            <div className="stitch-title"></div>
-            <div className="stitch-counter">
+        <div className="click-container">
+            <div className="title">Stitches</div>
+            <div className="counter">
                 <div className="stitch-minus">
                     <Minus />
                 </div>
-                <div className="stitch-number">
+                <div className="stitch number">
                     <Number />
                 </div>
                 <div className="stitch-plus">

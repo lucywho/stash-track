@@ -5,13 +5,13 @@ import Number from "./number";
 
 export default function Row() {
     return (
-        <div className="row-container">
-            <div className="row-title"></div>
-            <div className="row-counter">
+        <div className="click-container">
+            <div className="title">Rows</div>
+            <div className="counter">
                 <div className="row-minus">
                     <Minus />
                 </div>
-                <div className="row-number">
+                <div className="row number">
                     <Number />
                 </div>
                 <div className="row-plus">
