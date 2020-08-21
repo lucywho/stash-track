@@ -2,11 +2,15 @@ import React, { useState } from "react";
 
 export default function Count(props) {
     const [number, setNumber] = useState(0);
+    const [inc, setInc] = useState(1);
+
+    const title = props.title;
 
     let i = number;
+    let x;
 
     function add() {
-        i++;
+        i = number + inc;
 
         setNumber(i);
     }
@@ -24,17 +28,45 @@ export default function Count(props) {
     function clear() {
         i = 0;
         setNumber(i);
+        x = 1;
+        setInc(x);
+    }
+
+    function submit() {
+        x = document.getElementById("increment").value;
+
+        x = parseInt(x);
+        console.log(x);
+
+        setInc(x);
     }
 
     return (
         <div className="click-container">
-            <div className="title">{props.title} </div>
+            <div className="title">{title} </div>
+            <div className="settings">
+                <div className="count clear">
+                    <button className="reset" onClick={clear}>
+                        clear
+                    </button>
+                </div>
+                {title === "Stitches" && (
+                    <>
+                        <input
+                            id="increment"
+                            type="number"
+                            name="increment"
+                            placeholder="1"
+                        />
+                        <button className="submit" onClick={submit}>
+                            Submit
+                        </button>
+                    </>
+                )}
+            </div>
             <div className="counter">
                 <div className="count down">
-                    <button
-                        className="minus"
-                        onClick={() => minus(this, number)}
-                    >
+                    <button className="minus" onClick={minus}>
                         -
                     </button>
                 </div>
@@ -44,11 +76,6 @@ export default function Count(props) {
                         +
                     </button>
                 </div>
-            </div>
-            <div className="count clear">
-                <button className="reset" onClick={clear}>
-                    clear
-                </button>
             </div>
         </div>
     );
