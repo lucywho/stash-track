@@ -1,9 +1,7 @@
 import React from "react";
 import Logo from "./logo";
 import Name from "./name";
-import Row from "./row";
-import Stitch from "./stitch";
-
+import Counter from "./counter";
 import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
@@ -16,8 +14,7 @@ export default function App() {
                         <Name />
                     </div>
                     <div className="counter-container">
-                        <Row />
-                        <Stitch />
+                        <Counter />
                     </div>
                 </div>
             </div>

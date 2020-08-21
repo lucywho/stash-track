@@ -16,7 +16,6 @@ body {
 
 .app-container {
     height: 100vh;
-    opacity: 100%;
 }
 
 .strapline,
@@ -108,7 +107,7 @@ button {
 button {
     height: 100%;
     width: 100%;
-    font-size: inherit;
+    font-size: 3rem;
 }
 
 .stitch-minus,
