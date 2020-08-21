@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Row() {
+export default function Repeat() {
     const [number, setNumber] = useState(0);
     let i = number;
 
@@ -27,7 +27,7 @@ export default function Row() {
 
     return (
         <div className="click-container">
-            <div className="title">Rows</div>
+            <div className="title">Pattern Repeat</div>
             <div className="counter">
                 <div className="count down">
                     <button className="minus" onClick={minus}>

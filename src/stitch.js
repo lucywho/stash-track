@@ -11,8 +11,17 @@ export default function Stitch() {
     }
 
     function minus() {
-        i--;
+        if (i > 0) {
+            i--;
 
+            setNumber(i);
+        } else {
+            return;
+        }
+    }
+
+    function clear() {
+        i = 0;
         setNumber(i);
     }
 
@@ -20,17 +29,22 @@ export default function Stitch() {
         <div className="click-container">
             <div className="title">Stitches</div>
             <div className="counter">
-                <div className="stitch-minus">
+                <div className="count down">
                     <button className="minus" onClick={minus}>
                         -
                     </button>
                 </div>
-                <div className="stitch number">{number}</div>
-                <div className="stitch-plus">
+                <div className="number">{number}</div>
+                <div className="count up">
                     <button className="plus" onClick={add}>
                         +
                     </button>
                 </div>
+            </div>
+            <div className="count clear">
+                <button className="reset" onClick={clear}>
+                    clear
+                </button>
             </div>
         </div>
     );
