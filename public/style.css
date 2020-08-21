@@ -99,7 +99,7 @@ button {
     border: #23967f 2px solid;
     border-radius: 30px;
     padding: 1%;
-    text-align: center;
+
     color: inherit;
     background-color: white;
 }
@@ -116,4 +116,8 @@ button {
 .row-minus,
 .row-plus {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }

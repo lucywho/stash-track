@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from "react";
 
-import Number from "./number";
-
 export default function Counter() {
-    const { number, setNumber } = useState(0);
+    const [rownumber, setRowNumber] = useState(0);
+    const [stnumber, setStNumber] = useState(0);
 
-    useEffect(() => {
-        //
-    }, []);
+    let s = stnumber;
+    let r = rownumber;
 
-    function add() {
-        setNumber = number + 1;
+    useEffect(() => {}, []);
+
+    function radd() {
+        r++;
+
+        setRowNumber(r);
     }
 
-    function minus() {
-        setNumber = number - 1;
+    function rminus() {
+        r--;
+
+        setRowNumber(r);
+    }
+
+    function sadd() {
+        s++;
+
+        setStNumber(s);
+    }
+
+    function sminus() {
+        s--;
+
+        setStNumber(s);
     }
 
     return (
@@ -23,15 +39,13 @@ export default function Counter() {
                 <div className="title">Rows</div>
                 <div className="counter">
                     <div className="row-minus">
-                        <button className="minus" onClick={minus}>
+                        <button className="minus" onClick={rminus}>
                             -
                         </button>
                     </div>
-                    <div className="row number">
-                        <Number />
-                    </div>
+                    <div className="row number">{rownumber}</div>
                     <div className="row-plus">
-                        <button className="plus" onClick={add}>
+                        <button className="plus" onClick={radd}>
                             +
                         </button>
                     </div>
@@ -42,15 +56,13 @@ export default function Counter() {
                 <div className="title">Stitches</div>
                 <div className="counter">
                     <div className="stitch-minus">
-                        <button className="minus" onClick={minus}>
+                        <button className="minus" onClick={sminus}>
                             -
                         </button>
                     </div>
-                    <div className="stitch number">
-                        <Number />
-                    </div>
+                    <div className="stitch number">{stnumber}</div>
                     <div className="stitch-plus">
-                        <button className="plus" onClick={add}>
+                        <button className="plus" onClick={sadd}>
                             +
                         </button>
                     </div>
