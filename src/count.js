@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-export default function Row() {
+export default function Count(props) {
     const [number, setNumber] = useState(0);
+
     let i = number;
 
     function add() {
@@ -27,10 +28,13 @@ export default function Row() {
 
     return (
         <div className="click-container">
-            <div className="title">Rows</div>
+            <div className="title">{props.title} </div>
             <div className="counter">
                 <div className="count down">
-                    <button className="minus" onClick={minus}>
+                    <button
+                        className="minus"
+                        onClick={() => minus(this, number)}
+                    >
                         -
                     </button>
                 </div>

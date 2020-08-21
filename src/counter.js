@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
-import Row from "./row";
-import Stitch from "./stitch";
-import Repeat from "./repeat";
+import React from "react";
+import Count from "./count";
 
 export default function Counter() {
-    useEffect(() => {}, []);
-
     return (
         <>
-            <Row />
-
-            <Stitch />
-
-            <Repeat />
+            <Count title={"Rows"} />
+            <Count title={"Stitches"} />
+            <Count title={"Pattern Repeat"} />
         </>
     );
 }
