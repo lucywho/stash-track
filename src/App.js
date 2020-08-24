@@ -7,15 +7,13 @@ import { BrowserRouter } from "react-router-dom";
 export default function App() {
     return (
         <BrowserRouter>
-            <div className="startelem">
-                <div className="app-container">
-                    <div className="strapline">
-                        <Logo />
-                        <Name />
-                    </div>
-                    <div className="counter-container">
-                        <Counter />
-                    </div>
+            <div className="app-container">
+                <div className="strapline">
+                    <Logo />
+                    <Name />
+                </div>
+                <div className="counter-container">
+                    <Counter />
                 </div>
             </div>
         </BrowserRouter>

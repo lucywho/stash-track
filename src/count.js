@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 export default function Count(props) {
+    const title = props.title;
+
     const [number, setNumber] = useState(0);
     const [inc, setInc] = useState(1);
-
-    const title = props.title;
 
     let i = number;
     let x;
@@ -30,13 +30,12 @@ export default function Count(props) {
         setNumber(i);
         x = 1;
         setInc(x);
+        document.getElementById("increment").value = "";
     }
 
-    function submit() {
+    function setIncrement() {
         x = document.getElementById("increment").value;
-
         x = parseInt(x);
-        console.log(x);
 
         setInc(x);
     }
@@ -44,26 +43,20 @@ export default function Count(props) {
     return (
         <div className="click-container">
             <div className="title">{title} </div>
-            <div className="settings">
-                <div className="count clear">
-                    <button className="reset" onClick={clear}>
-                        clear
+            {title === "Stitches" && (
+                <div className="settings">
+                    <div className="count info">count in multiples of:</div>
+                    <input
+                        id="increment"
+                        type="number"
+                        name="increment"
+                        placeholder="1"
+                    />
+                    <button className="count submit" onClick={setIncrement}>
+                        confirm
                     </button>
                 </div>
-                {title === "Stitches" && (
-                    <>
-                        <input
-                            id="increment"
-                            type="number"
-                            name="increment"
-                            placeholder="1"
-                        />
-                        <button className="submit" onClick={submit}>
-                            Submit
-                        </button>
-                    </>
-                )}
-            </div>
+            )}
             <div className="counter">
                 <div className="count down">
                     <button className="minus" onClick={minus}>
@@ -76,6 +69,11 @@ export default function Count(props) {
                         +
                     </button>
                 </div>
+            </div>
+            <div className="count clear">
+                <button className="reset" onClick={clear}>
+                    clear
+                </button>
             </div>
         </div>
     );

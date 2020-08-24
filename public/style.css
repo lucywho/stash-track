@@ -10,10 +10,6 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-#startelem {
-    height: 100vh;
-}
-
 .app-container {
     height: 100vh;
 }
@@ -30,22 +26,19 @@ body {
     padding: 1vh;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.logo,
-.name {
+img.logo {
+    width: 30%;
     height: 100%;
+    object-fit: contain;
 }
 
 .name {
+    align-items: center;
     color: #4e0828;
     display: flex;
+    font-size: 13vw;
+    height: 100%;
     justify-content: center;
-    align-items: center;
-    font-size: 15vw;
     max-height: 150px;
     text-align: center;
     width: 70%;
@@ -65,18 +58,19 @@ img {
 }
 
 .click-container {
+    align-items: center;
     background-color: #eaf9d9;
     border: #23967f 2px solid;
     border-radius: 30px;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    height: 30%;
-    padding: 2%;
-    margin-top: 2%;
     font-size: 5vw;
+    height: 30%;
+    justify-content: space-between;
+    margin-top: 2%;
+    padding: 2%;
+    position: relative;
+    width: 80%;
 }
 
 .title,
@@ -91,7 +85,6 @@ img {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: stretch;
     width: 100%;
     text-align: center;
 }
@@ -107,25 +100,35 @@ button {
     font-size: 3rem;
 }
 
-.submit,
-#increment {
+.info {
     font-size: 1rem;
-    width: 30%;
+    flex-grow: 2;
 }
 
 button {
     height: 100%;
     width: 100%;
+    font-family: inherit;
 }
 
 .number,
-.count,
-#increment {
+.count {
     width: 30%;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+
+.submit,
+#increment {
+    font-size: 1rem;
+    flex-basis: 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 1%;
 }
 
 .up {
@@ -134,4 +137,91 @@ button {
 
 .down {
     color: #ff6f59;
+}
+
+@media screen and (max-width: 325px) {
+    button.count.submit {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .settings,
+    .counter {
+        margin-bottom: 1%;
+    }
+}
+
+@media screen and (min-width: 765px) {
+    .click-container {
+        margin: 0.5%;
+    }
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 1%;
+    }
+
+    button,
+    .number {
+        font-size: 1.75rem;
+    }
+
+    button.reset,
+    .count.info {
+        font-size: 1.5rem;
+    }
+
+    .plus,
+    .minus {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .counter {
+        height: 55px;
+    }
+}
+
+@media screen and (min-width: 765px) {
+    .counter-container {
+        flex-direction: row;
+    }
+
+    .title {
+        height: 10%;
+        margin-bottom: 2%;
+    }
+
+    .click-container {
+        height: 90%;
+    }
+
+    .counter {
+        flex-direction: column;
+        height: 80%;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .settings {
+        height: 17%;
+    }
+
+    .count.info {
+        font-size: 20px;
+    }
+
+    .count,
+    .number {
+        height: 85px;
+        width: 85px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .count.submit {
+        height: 100%;
+        margin-left: 1%;
+    }
 }
