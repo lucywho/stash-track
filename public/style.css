@@ -152,7 +152,7 @@ button {
     }
 }
 
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 650px) {
     .click-container {
         margin: 0.5%;
     }
@@ -182,13 +182,16 @@ button {
     }
 }
 
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 950px) {
+    .name {
+        font-size: 10vw;
+    }
     .counter-container {
         flex-direction: row;
     }
 
     .title {
-        height: 10%;
+        height: 8%;
         margin-bottom: 2%;
     }
 
