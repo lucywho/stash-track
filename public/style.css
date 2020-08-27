@@ -1,40 +1,43 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-}
-
-html,
-body {
-    min-height: 100vh;
-    font-family: "Roboto", sans-serif;
 }
 
 .app-container {
-    height: 100vh;
+    color: #4e0828;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .strapline,
 .counter-container {
+    align-items: center;
+    border: #086788 5px solid;
+    border-radius: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    border: #23967f 5px solid;
-    border-radius: 30px;
-    margin: 1vh 1vh 0 1vh;
-    padding: 1vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.counter-container {
+    flex-flow: column nowrap;
+    height: auto;
+    margin-top: 1%;
 }
 
 img.logo {
-    width: 30%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    width: 30%;
 }
 
 .name {
     align-items: center;
-    color: #4e0828;
+    color: #086788;
     display: flex;
     font-size: 13vw;
     height: 100%;
@@ -44,17 +47,22 @@ img.logo {
     width: 70%;
 }
 
-.counter-container {
-    color: #086788;
-    min-height: 75vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+.title,
+.reset {
+    font-weight: bold;
+    overflow: visible;
+    width: 90%;
+    text-align: center;
+    font-size: 5vw;
 }
 
-.title {
-    font-weight: bold;
+button {
+    background-color: transparent;
+    border: none;
+    color: #086788;
+    font-family: inherit;
+    font-size: 3rem;
+    padding: 0 2%;
 }
 
 .click-container {
@@ -65,166 +73,123 @@ img.logo {
     display: flex;
     flex-flow: column nowrap;
     font-size: 5vw;
-    height: 30%;
+    height: auto;
+    margin: 0.5% 0;
+    min-height: 30%;
     justify-content: space-between;
-    margin-top: 2%;
-    padding: 2%;
+    padding: 1%;
     position: relative;
-    width: 80%;
-}
-
-.title,
-.reset {
-    width: 100%;
-    text-align: center;
-    font-size: 5vw;
+    width: 90%;
 }
 
 .counter,
 .settings {
+    align-items: center;
     display: flex;
     flex-flow: row nowrap;
+    overflow: hidden;
     justify-content: space-between;
+    position: relative;
     width: 100%;
-    text-align: center;
+    margin: 1% 0;
 }
 
 .number,
-#increment,
-button {
+.box {
+    background-color: white;
     border: #23967f 2px solid;
     border-radius: 30px;
-    padding: 1%;
     color: inherit;
-    background-color: white;
-    font-size: 3rem;
-}
 
-.info {
-    font-size: 1rem;
-    flex-grow: 2;
-}
-
-button {
-    height: 100%;
-    width: 100%;
-    font-family: inherit;
-}
-
-.number,
-.count {
-    width: 30%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    font-size: 3rem;
     justify-content: center;
+    margin: 0 1%;
+    padding: 1%;
+    text-align: center;
+    width: 30%;
+}
+
+.st-text {
+    flex-grow: 2;
+    font-size: 1rem;
+    padding-right: 2%;
+    text-align: right;
 }
 
 .submit,
 #increment {
+    display: flex;
     font-size: 1rem;
-    flex-basis: 25%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 1%;
+    width: 25%;
 }
 
-.up {
-    color: #086788;
+.plus,
+.minus {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.down {
+.plus {
+    color: #23967f;
+}
+
+.minus {
     color: #ff6f59;
 }
 
-@media screen and (max-width: 325px) {
-    button.count.submit {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (min-width: 425px) {
-    .settings,
-    .counter {
-        margin-bottom: 1%;
-    }
-}
-
-@media screen and (min-width: 650px) {
-    .click-container {
-        margin: 0.5%;
-    }
-    .title {
+@media screen and (min-width: 760px) {
+    .st-text,
+    .submit,
+    #increment {
         font-size: 1.5rem;
-        margin-bottom: 1%;
-    }
-
-    button,
-    .number {
-        font-size: 1.75rem;
-    }
-
-    button.reset,
-    .count.info {
-        font-size: 1.5rem;
-    }
-
-    .plus,
-    .minus {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .counter {
-        height: 55px;
     }
 }
 
 @media screen and (min-width: 950px) {
+    .app-container {
+        justify-content: stretch;
+    }
+
+    .strapline {
+        height: 18vh;
+    }
+
+    .counter-container {
+        flex-direction: row;
+        min-height: 75vh;
+        align-items: stretch;
+    }
+
+    img.logo {
+        object-fit: contain;
+    }
+
     .name {
         font-size: 10vw;
     }
-    .counter-container {
-        flex-direction: row;
-    }
-
-    .title {
-        height: 8%;
-        margin-bottom: 2%;
-    }
 
     .click-container {
-        height: 90%;
+        min-height: 100%;
+        margin: 0.5%;
     }
 
     .counter {
-        flex-direction: column;
-        height: 80%;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
+        flex-direction: row;
+        flex-grow: 2;
     }
 
     .settings {
-        height: 17%;
+        margin-top: 5%;
     }
 
-    .count.info {
-        font-size: 20px;
-    }
-
-    .count,
-    .number {
-        height: 85px;
-        width: 85px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .count.submit {
-        height: 100%;
-        margin-left: 1%;
+    .box.reset {
+        width: auto;
     }
 }

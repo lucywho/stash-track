@@ -6,7 +6,7 @@ export default function Counter() {
         <>
             <Count title={"Rows"} />
             <Count title={"Stitches"} />
-            <Count title={"Pattern Repeat"} />
+            <Count title={"Pattern Rpt"} />
         </>
     );
 }

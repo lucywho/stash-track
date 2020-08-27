@@ -45,34 +45,39 @@ export default function Count(props) {
             <div className="title">{title} </div>
             {title === "Stitches" && (
                 <div className="settings">
-                    <div className="count info">count in multiples of:</div>
+                    <div className="st-text no-box">
+                        <p>count in</p>
+                        <p>multiples of:</p>
+                    </div>
                     <input
                         id="increment"
+                        className="box"
                         type="number"
                         name="increment"
+                        min="0"
                         placeholder="1"
                     />
-                    <button className="count submit" onClick={setIncrement}>
+                    <button className="box submit" onClick={setIncrement}>
                         confirm
                     </button>
                 </div>
             )}
             <div className="counter">
-                <div className="count down">
+                <div className="box">
                     <button className="minus" onClick={minus}>
                         -
                     </button>
                 </div>
-                <div className="number">{number}</div>
-                <div className="count up">
+                <div className="number box">{number}</div>
+                <div className="box">
                     <button className="plus" onClick={add}>
                         +
                     </button>
                 </div>
             </div>
-            <div className="count clear">
+            <div className="box reset">
                 <button className="reset" onClick={clear}>
-                    clear
+                    reset
                 </button>
             </div>
         </div>
