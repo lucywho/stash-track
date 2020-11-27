@@ -81,3 +81,11 @@ if (process.env.NODE_ENV != "production") {
 } else {
     app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
+
+// app.get("/welcome", (req, res) => {
+//     if (req.session.userId && !resetPass) {
+//         res.redirect("/");
+//     } else {
+//         res.sendFile(__dirname + "/index.html");
+//     }
+// });
