@@ -1,6 +1,6 @@
-A counting app for crochet and knitting projects.
+A tracking app for crochet and knitting supplies.
 
-User can count rows, stitches, and pattern repeats on a single screen. User can choose to count stitches in multiples to reduce number of clicks.
+User can upload information about their yarn stash, add/remove items, and sort by colour, type, weight etc
 
 Built in React.js
 
