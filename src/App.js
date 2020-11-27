@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./logo";
 import Name from "./name";
-import Counter from "./counter";
+// import Counter from "./counter";
 import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
@@ -12,9 +12,9 @@ export default function App() {
                     <Logo />
                     <Name />
                 </div>
-                <div className="counter-container">
+                {/* <div className="counter-container">
                     <Counter />
-                </div>
+                </div> */}
             </div>
         </BrowserRouter>
     );
