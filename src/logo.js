@@ -4,8 +4,8 @@ export default function Logo() {
     return (
         <img
             className="logo"
-            src="./crochet-stitches.jpg"
-            alt="crochet stitches"
+            src="./squigglywool.png"
+            alt="abstract logo of tangled yarn"
         />
     );
 }

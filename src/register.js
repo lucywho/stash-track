@@ -7,6 +7,10 @@ export default function Register() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
+    function submitReg(e) {
+        console.log("submit reg fires");
+    }
+
     //ToDo: add functions to save inputs and send to backend
 
     return (
@@ -18,30 +22,33 @@ export default function Register() {
                         again.
                     </div>
                 )}
+                <label htmlFor="first">first name</label>
                 <input name="first" placeholder="first name..." />
+                <label htmlFor="first">last name</label>
                 <input name="last" placeholder="last name..." />
+                <label htmlFor="email">email address</label>
                 <input
                     name="email"
                     type="email"
                     placeholder="email address..."
                 />
+                <label htmlFor="password">choose a password</label>
                 <input
                     name="password"
                     type="password"
                     placeholder="choose a password..."
                 />
-                <p id="nb">
-                    By signing up, you agree to allow the site to use functional
-                    cookies.
-                </p>
-                <button onClick={() => this.submit()}>
-                    click to accept cookies and register!
+                This site needs to use functional cookies to keep track of your
+                stash. Please check this box if you agree to cookies. We do not
+                share any data with third parties.
+                <button onClick={() => submitReg()}>
+                    click to accept cookies and register
                 </button>
                 <div>
                     <br />
                     <h3>Already a member?</h3>
                     <Link to="/login">
-                        <button>click here to log in!</button>
+                        <button>click here to log in</button>
                     </Link>
                 </div>
             </div>
