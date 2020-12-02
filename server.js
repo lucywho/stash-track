@@ -87,9 +87,10 @@ if (process.env.NODE_ENV != "production") {
 app.get("/welcome", (req, res) => {
     console.log("welcome route hit");
     if (req.session.userId && !resetPass) {
+        res.json({ success: true });
         res.redirect("/");
     } else {
-        res.sendFile(__dirname + "/index.html");
+        res.sendFile(__dirname + "/public/index.html");
     }
 });
 
@@ -110,10 +111,8 @@ app.post("/register", (req, res) => {
     hash(password).then((hashpass) => {
         db.addUser(first_name, last_name, email, hashpass)
             .then((results) => {
-                console.log("results", results.rows[0]);
-                user_id = results.rows[0].id;
-                console.log("user id", user_id);
-                req.session.userId = user_id;
+                req.session.userId = results.rows[0].id;
+                console.log("session id", req.session.userId);
                 res.json({ error: false });
             })
             .catch((err) => {

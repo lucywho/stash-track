@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Name from "./name";
 import Logo from "./logo";
 import Welcome from "./welcome";

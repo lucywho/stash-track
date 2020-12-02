@@ -17,8 +17,6 @@ export default function Register() {
     };
 
     function submitReg(e) {
-        console.log("formDeets", formDeets);
-
         axios
             .post("/register", formDeets)
             .then((response) => {
