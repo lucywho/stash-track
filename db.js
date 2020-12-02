@@ -1,9 +1,8 @@
 const spicedPg = require("spiced-pg");
 
-//ToDo: add db url after setting up db
-
 const db = spicedPg(
-    process.env.DATABASE_URL || "postgres:postgres:postgres@localhost:<...>"
+    process.env.DATABASE_URL ||
+        "postgres:postgres:postgres@localhost:5432/stashtrack"
 );
 
 module.exports.addUser = (first_name, last_name, email, hashpass) => {

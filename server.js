@@ -95,10 +95,33 @@ app.get("/welcome", (req, res) => {
 
 app.post("/register", (req, res) => {
     console.log("/register route hit");
-    console.log("req.body", req.body);
-    // res.json({
-    //     error: true,
-    // });
-});
+
+    const first_name = req.body.first;
+    const last_name = req.body.last;
+    const email = req.body.email;
+    const password = req.body.password;
+    let user_id;
+
+    if (!first_name || !last_name || !email || !password) {
+        res.json({ error: true });
+        return;
+    }
+
+    hash(password).then((hashpass) => {
+        db.addUser(first_name, last_name, email, hashpass)
+            .then((results) => {
+                console.log("results", results.rows[0]);
+                user_id = results.rows[0].id;
+                console.log("user id", user_id);
+                req.session.userId = user_id;
+                res.json({ error: false });
+            })
+            .catch((err) => {
+                console.log("err in addUser: ", err);
+                res.json({ error: true });
+            });
+        return;
+    });
+}); //end of register route
 
 server.listen(port, () => console.log(`listening on port ${port}`));
