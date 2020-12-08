@@ -112,7 +112,7 @@ app.post("/register", (req, res) => {
         db.addUser(first_name, last_name, email, hashpass)
             .then((results) => {
                 req.session.userId = results.rows[0].id;
-                console.log("session id", req.session.userId);
+                user_id = req.session.userId;
                 res.json({ error: false });
             })
             .catch((err) => {
@@ -123,4 +123,6 @@ app.post("/register", (req, res) => {
     });
 }); //end of register route
 
-server.listen(port, () => console.log(`listening on port ${port}`));
+server.listen(port, () =>
+    console.log(`stashtrack server listening on port ${port}`)
+);
