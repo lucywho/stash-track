@@ -1,6 +1,6 @@
 import React from "react";
 //import axios from "./axios";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Register from "./register";
 import Login from "./login";
 // import ResetPassword from "./reset"

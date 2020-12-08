@@ -22,10 +22,10 @@ export default function Register() {
             .then((response) => {
                 console.log("response.data: ", response.data);
 
-                if (response.data.success) {
-                    console.log("success");
+                if (!response.data.error) {
+                    console.log("register success");
                 } else {
-                    setError("true");
+                    setError(true);
                 }
             })
             .catch((err) => {

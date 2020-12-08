@@ -87,7 +87,6 @@ if (process.env.NODE_ENV != "production") {
 app.get("/welcome", (req, res) => {
     console.log("welcome route hit");
     if (req.session.userId && !resetPass) {
-        res.json({ success: true });
         res.redirect("/");
     } else {
         res.sendFile(__dirname + "/public/index.html");
@@ -95,7 +94,7 @@ app.get("/welcome", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-    console.log("/register route hit");
+    console.log("register route hit");
 
     const first_name = req.body.first;
     const last_name = req.body.last;
@@ -122,6 +121,46 @@ app.post("/register", (req, res) => {
         return;
     });
 }); //end of register route
+
+app.post("/login", (req, res) => {
+    console.log("/login route hit");
+    const logemail = req.body.email;
+    const logpassword = req.body.password;
+    console.log(logemail, logpassword);
+    let user_id;
+
+    if (!logemail || !logpassword) {
+        res.json({ error: true });
+        return;
+    }
+
+    db.getPassword(logemail)
+        .then((results) => {
+            let hashpass = results.rows[0].password;
+
+            compare(logpassword, hashpass)
+                .then((matchValue) => {
+                    if (!matchValue) {
+                        console.log("err in matchValue: ", err);
+                        res.json({ error: true });
+                        return;
+                    } else {
+                        user_id = results.rows[0].id;
+                        req.session.userId = user_id;
+                        res.json({ error: false });
+                    }
+                }) //end of matchvalue
+                .catch((err) => {
+                    console.log("err in compare password: ", err);
+                    res.json({ error: true });
+                });
+            return;
+        })
+        .catch((err) => {
+            console.log("error in getPassword: ", err);
+            res.json({ error: true });
+        });
+}); //end of login route
 
 server.listen(port, () =>
     console.log(`stashtrack server listening on port ${port}`)
