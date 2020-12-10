@@ -103,7 +103,7 @@ app.post("/register", (req, res) => {
     let user_id;
 
     if (!first_name || !last_name || !email || !password) {
-        res.json({ error: true });
+        res.json({ success: false });
         return;
     }
 

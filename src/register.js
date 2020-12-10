@@ -16,7 +16,7 @@ export default function Register() {
         password: password,
     };
 
-    function submitReg(e) {
+    function submitReg() {
         console.log("formDeets", formDeets);
 
         axios
