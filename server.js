@@ -95,6 +95,7 @@ app.get("/welcome", (req, res) => {
 
 app.post("/register", (req, res) => {
     console.log("/register route hit");
+    console.log("req body", req.body);
 
     const first_name = req.body.first;
     const last_name = req.body.last;
@@ -103,7 +104,9 @@ app.post("/register", (req, res) => {
     let user_id;
 
     if (!first_name || !last_name || !email || !password) {
-        res.json({ success: false });
+        res.json({
+            success: false,
+        });
         return;
     }
 

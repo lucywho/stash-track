@@ -20,9 +20,10 @@ export default function Register() {
         console.log("formDeets", formDeets);
 
         axios
-            .post("/register", formDeets)
+            .post("/register/", formDeets)
             .then((response) => {
                 console.log("response.data: ", response.data);
+                clearAll();
 
                 if (response.data.success) {
                     console.log("success");
@@ -35,7 +36,13 @@ export default function Register() {
             });
     }
 
-    //ToDo: add functions to save inputs and send to backend
+    function clearAll() {
+        console.log("clear all called");
+        setFirst("");
+        setLast("");
+        setPassword("");
+        setEmail("");
+    }
 
     return (
         <section className="register container">
@@ -53,6 +60,7 @@ export default function Register() {
                         type="text"
                         name="first"
                         placeholder="first name..."
+                        value={first}
                     />
                     <label htmlFor="first">last name</label>
                     <input
@@ -60,6 +68,7 @@ export default function Register() {
                         type="text"
                         name="last"
                         placeholder="last name..."
+                        value={last}
                     />
                     <label htmlFor="email">email address</label>
                     <input
@@ -67,6 +76,7 @@ export default function Register() {
                         name="email"
                         type="email"
                         placeholder="email address..."
+                        value={email}
                     />
                     <label htmlFor="password">choose a password</label>
                     <input
@@ -74,6 +84,7 @@ export default function Register() {
                         name="password"
                         type="password"
                         placeholder="choose a password..."
+                        value={password}
                     />
                     This site needs to use functional cookies to keep track of
                     your stash. Please check this box if you agree to cookies.
