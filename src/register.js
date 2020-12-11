@@ -16,11 +16,12 @@ export default function Register() {
         password: password,
     };
 
-    function submitReg() {
+    function submitReg(evt) {
+        evt.preventDefault();
         console.log("formDeets", formDeets);
 
         axios
-            .post("/register/", formDeets)
+            .post("/register", formDeets)
             .then((response) => {
                 console.log("response.data: ", response.data);
                 clearAll();
@@ -92,9 +93,10 @@ export default function Register() {
                     <input
                         type="submit"
                         value="click to accept cookies and register"
-                        onClick={() => submitReg()}
+                        onClick={submitReg}
                     />
                 </form>
+
                 <div>
                     <br />
                     <h3>Already a member?</h3>

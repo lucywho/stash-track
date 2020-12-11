@@ -117,14 +117,22 @@ app.post("/register", (req, res) => {
                 user_id = results.rows[0].id;
                 console.log("user id", user_id);
                 req.session.userId = user_id;
-                res.json({ error: false });
+                res.json({ success: true });
             })
             .catch((err) => {
                 console.log("err in addUser: ", err);
-                res.json({ error: true });
+                res.json({ success: false });
             });
         return;
     });
 }); //end of register route
+
+app.get("*", function(req, res) {
+    if (!req.session.userId) {
+        res.redirect("/welcome");
+    } else {
+        res.sendFile(__dirname + "/index.html");
+    }
+});
 
 server.listen(port, () => console.log(`listening on port ${port}`));
