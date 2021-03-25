@@ -7,18 +7,17 @@ import { BrowserRouter } from "react-router-dom";
 export default function App() {
     return (
         <BrowserRouter>
-            <div className="app container">
-                <div id="nav-bar">
+            <div id="app">
+                <div id="logo">
                     <Logo />
                 </div>
+                <div id="nav-bar"></div>
 
-                <div id="main-section">
-                    <div id="banner">
-                        <Name />
-                    </div>
-                    <div id="display">
-                        <Welcome />
-                    </div>
+                <div id="banner">
+                    <Name />
+                </div>
+                <div id="display-area">
+                    <Welcome />
                 </div>
             </div>
         </BrowserRouter>

@@ -46,7 +46,7 @@ export default function Register() {
     }
 
     return (
-        <section className="register container">
+        <section className="register centered">
             <div className="register-component">
                 {error && (
                     <div className="error">

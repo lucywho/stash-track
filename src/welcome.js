@@ -7,7 +7,7 @@ import Login from "./login";
 
 export default function Welcome() {
     return (
-        <section className="welcome container">
+        <section className="welcome centred">
             <div className="welcome-component">
                 <div className="welcome-text">
                     <h1>Welcome to StashTrack.</h1>
