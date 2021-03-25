@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Name() {
     return (
-        <div className="name">
+        <div id="stash-track-title">
             <p>StashTrack</p>
         </div>
     );

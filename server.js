@@ -37,7 +37,7 @@ app.use(
 
 app.use(csurf());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.cookie("mytoken", req.csrfToken());
     next();
 });
@@ -73,7 +73,7 @@ app.use((req, res, next) => {
 
 // === ROUTES ===
 
-if (process.env.NODE_ENV != "production") {
+if (process.env.NODE_ENV !== "production") {
     app.use(
         "/bundle.js",
         require("http-proxy-middleware")({
@@ -127,7 +127,7 @@ app.post("/register", (req, res) => {
     });
 }); //end of register route
 
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
     if (!req.session.userId) {
         res.redirect("/welcome");
     } else {
@@ -135,4 +135,4 @@ app.get("*", function(req, res) {
     }
 });
 
-server.listen(port, () => console.log(`listening on port ${port}`));
+server.listen(port, () => console.log(`stashtrack listening on port ${port}`));

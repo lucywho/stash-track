@@ -8,11 +8,18 @@ export default function App() {
     return (
         <BrowserRouter>
             <div className="app container">
-                <div className="banner">
+                <div id="nav-bar">
                     <Logo />
-                    <Name />
                 </div>
-                <Welcome />
+
+                <div id="main-section">
+                    <div id="banner">
+                        <Name />
+                    </div>
+                    <div id="display">
+                        <Welcome />
+                    </div>
+                </div>
             </div>
         </BrowserRouter>
     );
