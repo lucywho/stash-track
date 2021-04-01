@@ -84,12 +84,12 @@ if (process.env.NODE_ENV !== "production") {
     app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
 
-app.get("/welcome", (req, res) => {
+app.get("/", (req, res) => {
     console.log("welcome route hit");
     if (req.session.userId && !resetPass) {
-        res.redirect("/");
+        res.redirect("/welcome");
     } else {
-        res.sendFile(__dirname + "/index.html");
+        res.sendFile(__dirname + "/public/index.html");
     }
 });
 

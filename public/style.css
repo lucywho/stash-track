@@ -12,6 +12,23 @@
     align-items: center;
 }
 
+button {
+    padding: 5px;
+    border: rgb(0, 0, 0) 3px solid;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+button:hover,
+button:focus {
+    background-color: blue;
+    color: white;
+    border-color: white;
+}
+
 /* main display */
 
 #app {
@@ -35,6 +52,10 @@
 
 #nav-bar {
     grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #banner {
@@ -48,7 +69,7 @@
     width: 100%;
     margin-left: 2%;
 }
-#stash-track-title > p {
+#stash-track-title p {
     font-family: "Satisfy", cursive;
     color: rgb(0, 0, 0);
     font-size: 400%;
@@ -69,12 +90,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    /* position: relative; */
 }
 
 /* welcome component */
 
-.welcome {
-    height: 100%;
-    width: 100%;
+.welcome-text {
+    text-align: center;
 }
