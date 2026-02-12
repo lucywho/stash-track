@@ -10,7 +10,7 @@
         "aws-sdk": "^2.1494.0",
         "axios": "^1.13.5",
         "bcryptjs": "^2.4.3",
-        "cookie-session": "^1.4.0",
+        "cookie-session": "^2.1.1",
         "csurf": "^1.11.0",
         "express": "^4.22.1",
         "fitty": "^2.3.2",
@@ -18,7 +18,7 @@
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^5.0.1",
-        "serve": "^14.2.1",
+        "serve": "^14.2.5",
         "spiced-pg": "^1.0.3",
         "util": "^0.12.3"
     },
